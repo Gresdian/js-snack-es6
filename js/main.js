@@ -23,15 +23,19 @@ const bike = [
     }
 ]
 
-
+let bici_leggera = bike[0];
 
 bike.forEach((elem) => {
     let {peso} = elem;
-    if (peso <= 10) {
-        console.log(elem);
+    if (elem.peso < bici_leggera.peso) {
+        bici_leggera = elem;
     }
 })
 
+let {nome , peso} = bici_leggera;
+
+let text =`la bici più leeggera è ${nome} e pesa ${peso}`;
+console.log(text);
 //SNACK 2
 
 const footballteam = [
@@ -61,6 +65,7 @@ const footballteam = [
         fouls : 0
     },
 ];
+
 console.log(footballteam);
 footballteam.forEach((elem) => {
     elem.point = Math.floor(Math.random()*40 + 1);
@@ -68,6 +73,7 @@ footballteam.forEach((elem) => {
     
 })
 
-let teams_fouls = footballteam.map(({name , fouls}) =>  ({name, fouls}));
+let teams_fouls = footballteam.map(({name , fouls}) => 
+ ({name, fouls}));
 console.log(teams_fouls);
 
